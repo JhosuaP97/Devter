@@ -1,6 +1,6 @@
 import css from "styled-jsx/css";
-import {fonts, colors, breakpoints} from "../../styles/theme";
-import {addOpacityToColor} from "../../styles/utils";
+import { fonts, colors, breakpoints } from "../../styles/theme";
+import { addOpacityToColor } from "../../styles/utils";
 const backgroundColor = addOpacityToColor(colors.primary, 0.3);
 
 export const globalStyles = css.global`
@@ -12,10 +12,15 @@ export const globalStyles = css.global`
     background-size: 50px 50px;
     padding: 0;
     margin: 0;
+    overflow: hidden;
     font-family: ${fonts.base};
   }
   * {
     box-sizing: border-box;
+  }
+
+  textarea {
+    font-family: ${fonts.base};
   }
 `;
 
@@ -32,6 +37,10 @@ export default css`
     border-radius: 10px;
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   @media (min-width: ${breakpoints.mobile}) {
